@@ -1,0 +1,23 @@
+{
+  "name": "RPSLSPROJECT",
+  "version": "1.0.0",
+  "description": "Rock Paper Scissors project",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javidVeg/RPSLSPROJECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javidVeg/RPSLSPROJECT/issues"
+  },
+  "homepage": "https://github.com/javidVeg/RPSLSPROJECT#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
