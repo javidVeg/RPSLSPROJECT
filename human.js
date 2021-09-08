@@ -1,3 +1,4 @@
+const prompt = require ("./Player");
 
 class Human extends Player {
     constructor(){
