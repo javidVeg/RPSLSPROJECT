@@ -1,4 +1,4 @@
-
+const prompt = require ("./Player");
 
 class AI extends Player {
     constructor (){
@@ -9,3 +9,5 @@ class AI extends Player {
         let randomIndex = Math.floor(Math.Random() * this.gestures.length);
         this.chosenGesture = this.gestures[rand];
     }
+
+module.exports = AI;
