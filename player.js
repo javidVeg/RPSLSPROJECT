@@ -14,7 +14,6 @@ module.exports = Player;
 
 //ai.js
 
-
 }
 if playerOneSelection === "Rock" && playerTwoSelection === "Scissors"{
     console.log ("")
@@ -23,3 +22,5 @@ if playerOneSelection === "Rock" && playerTwoSelection === "Scissors"{
 if playerOneSelection === playerTwoSelection{
     console.log ("Draw! Please select again.")
 }
+
+module.exports = Player;

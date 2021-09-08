@@ -1,9 +1,12 @@
 "use strict"// create a function for random selection.
 const prompt = require('prompt-sync')();
-
+const Game = require('./Game');
 
 let myGame = new Game ();
+myGame.rungame();
 
+let selection = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
+let method = ['Crushes', 'Cuts', 'Covers', 'Crushes', 'Poisons', 'Smashes', 'Decapitates', 'Eats', 'Disproves', 'Vaporizes'];
 
 const handDraw = [
 {

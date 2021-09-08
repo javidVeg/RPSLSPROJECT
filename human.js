@@ -12,3 +12,5 @@ class Human extends Player {
         this.selection = prompt ("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock");
     }
 }
+
+module.exports = Human;
