@@ -2,7 +2,7 @@
 const prompt = require('prompt-sync')();
 
 //player.js
-class Player {
+class Player{
     constructor (){
         this.name = ""
         this.chosenGesture = ""
@@ -10,17 +10,6 @@ class Player {
         this.winTotal = 0;
     }
 }
-module.exports = Player;
 
-//ai.js
-
-}
-if playerOneSelection === "Rock" && playerTwoSelection === "Scissors"{
-    console.log ("")
-}
-
-if playerOneSelection === playerTwoSelection{
-    console.log ("Draw! Please select again.")
-}
 
 module.exports = Player;
