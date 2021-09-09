@@ -1,11 +1,13 @@
 //person select game type--switch case
 //battle -loop chooseGesture to decide winner until requirement sis met to get to 2 wins
 
+const Human = require('./Human');
+const AI = require('./AI');
+
 class Game {
     constructor{
         this.player1 = new Human();
         this.player2 = null;
-        
     }
     welcome (){
         console.log ("Welcome to RPSLS!\nRules:\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock");
@@ -22,8 +24,15 @@ class Game {
         default:
       }
     }
-    let selection = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
-    
+    while (this.player1.winTotal < 2 || this.player2.winTotal < 2){
+        ///run game again 
+        if (this.player1.winTotal = 2){
+            console.log ("Player 1 wins!")
+        }
+        if (this.player2.winTotal = 2){
+            console.log ("Player 2 wins!")
+        }
+}        
     showSelections (){
         if (this.player1.chosenGesture === this.player2.chosenGesture){
             console.log ("It's a draw!");
@@ -38,7 +47,7 @@ class Game {
             else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Lizard"){
                 console.log ("Rock Crushes Lizard");
                 this.player1.winTotal += 1;
-            } 
+            }
             else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Spock"){
                 console.log ("Spock Vaporizes Rock");
                 this.player2.winTotal += 1;
@@ -108,7 +117,8 @@ class Game {
                 this.player2.winTotal += 1;
         }
     }
-}        
-
-console.log(playerSelection)
-    
+    runGame (){
+        //runs the game
+    }
+}    
+module.exports = Game;
