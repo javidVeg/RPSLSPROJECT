@@ -1,11 +1,12 @@
 //person select game type--switch case
 //battle -loop chooseGesture to decide winner until requirement sis met to get to 2 wins
+const prompt = require('prompt-sync')();
 
 const Human = require('./Human');
 const AI = require('./AI');
 
 class Game {
-    constructor{
+    constructor (){
         this.player1 = new Human();
         this.player2 = null;
     }
@@ -15,27 +16,19 @@ class Game {
     gameType (){
     let gameChoice = prompt ("Select your game: 1. Human vs. Computer 2. Human vs. Human")
     switch (gameChoice){
-        case 1:
-            //opens a game against AI
+        case "1":
+            this.player2 = new AI ();
         break;
-        case 2:
-            //opens a game with two humans 
+        case "2":
+            this.player2 = new Human ();
         break;
         default:
-      }
+        }
     }
-    while (this.player1.winTotal < 2 || this.player2.winTotal < 2){
-        ///run game again 
-        if (this.player1.winTotal = 2){
-            console.log ("Player 1 wins!")
-        }
-        if (this.player2.winTotal = 2){
-            console.log ("Player 2 wins!")
-        }
-}        
-    showSelections (){
+    getResult (){
         if (this.player1.chosenGesture === this.player2.chosenGesture){
             console.log ("It's a draw!");
+        }    
             else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Scissors"){
                 console.log ("Rock Crushes Scissors");
                 this.player1.winTotal += 1;
@@ -72,7 +65,7 @@ class Game {
                 console.log ("Lizard Eats Paper");
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Paper" && this.player2.chosenGesture === "Spock")
+            else if (this.player1.chosenGesture === "Paper" && this.player2.chosenGesture === "Spock"){
                 console.log ("Paper Disproves Spock")
                 this.player1.winTotal += 1;
             }
@@ -114,11 +107,32 @@ class Game {
             }
             else if (this.player2.chosenGesture === "Paper" && this.player1.chosenGesture === "Spock")
                 console.log ("Paper Disproves Spock")
-                this.player2.winTotal += 1;
+                this.player2.winTotal += 1;        
         }
-    }
+        playGame () {
+        while (this.player1.winTotal < 2 && this.player2.winTotal < 2){
+            this.player1.chooseGesture();
+            this.player2.chooseGesture();
+            this.getResult();
+            }
+        }    
+        displayScore (){
+            console.log ("Player one has " + this.player1.winTotal + " wins");
+            console.log ("Player two has " + this.player2.winTotal + " wins")
+        }   
+        playAgain (){
+            prompt ("Would you like to play again?");
+            if (prompt === "yes"){
+                //bring up gameChoice menu
+            }    
+            else{
+                console.log ("Goodbye");
+            }
+        }     
     runGame (){
-        //runs the game
+        this.welcome();
+        this.gameType();
+        this.playGame();
     }
 }    
 module.exports = Game;

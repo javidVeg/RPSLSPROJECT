@@ -10,6 +10,4 @@ class Player{
         this.winTotal = 0;
     }
 }
-
-
 module.exports = Player;
