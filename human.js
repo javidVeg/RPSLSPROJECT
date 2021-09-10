@@ -10,7 +10,9 @@ class Human extends Player {
        this.name = prompt ("What is your name? ");
     }
     chooseGesture (){
-        this.chosenGesture = prompt ("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock");
+        console.log ("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock");
+        let index = prompt();
+        this.chosenGesture = this.gestures[index - 1];
     }
 }
 module.exports = Human;
