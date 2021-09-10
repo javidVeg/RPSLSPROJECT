@@ -11,10 +11,10 @@ class Game {
         this.player2 = null;
     }
     welcome (){
-        console.log ("Welcome to RPSLS!\nRules:\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock");
+        console.log ("Welcome to RPSLS!\nRules:\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n");
     }
     gameType (){
-    let gameChoice = prompt ("Select your game: 1. Human vs. Computer 2. Human vs. Human")
+    let gameChoice = prompt ("Select your game: 1. Human vs. Computer or 2. Human vs. Human ")
     switch (gameChoice){
         case "1":
             this.player2 = new AI ();
@@ -117,13 +117,13 @@ class Game {
             }
         }    
         displayScore (){
-            console.log ("Player one has " + this.player1.winTotal + " wins");
-            console.log ("Player two has " + this.player2.winTotal + " wins")
+            console.log (this.player1.name + " has " + this.player1.winTotal + " wins");
+            console.log (this.player2.name + " has " + this.player2.winTotal + " wins");
         }   
         playAgain (){
-            prompt ("Would you like to play again?");
+            prompt ("Would you like to play again? Enter 'yes' or 'no'");
             if (prompt === "yes"){
-                //bring up gameChoice menu
+                this.runGame();
             }    
             else{
                 console.log ("Goodbye");
@@ -132,7 +132,10 @@ class Game {
     runGame (){
         this.welcome();
         this.gameType();
+        this.getResult();
         this.playGame();
+        this.displayScore();
+        this.playAgain();
     }
 }    
 module.exports = Game;

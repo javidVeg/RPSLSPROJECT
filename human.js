@@ -7,7 +7,7 @@ class Human extends Player {
         this.getName ();
     }
     getName () {
-       this.name = prompt ("What is your name?");
+       this.name = prompt ("What is your name? ");
     }
     chooseGesture (){
         this.chosenGesture = prompt ("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock");
