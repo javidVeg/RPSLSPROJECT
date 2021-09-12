@@ -52,23 +52,23 @@ class Game {
             }
             else if ((this.player2.chosenGesture === this.player2.gestures[0] || this.player2.chosenGesture === this.player2.gestures[4]) && this.player1.chosenGesture === this.player1.gestures[2]){
                 console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
-                this.player1.winTotal += 1;
+                this.player2.winTotal += 1;
             }
             else if ((this.player2.chosenGesture === this.player2.gestures[1] || this.player2.chosenGesture === this.player2.gestures[4]) && this.player1.chosenGesture === this.player1.gestures[0]){
                 console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
-                this.player1.winTotal += 1;
+                this.player2.winTotal += 1;
             }
             else if ((this.player2.chosenGesture === this.player2.gestures[2] || this.player2.chosenGesture === this.player2.gestures[3]) && this.player1.chosenGesture === this.player1.gestures[1]){
                 console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
-                this.player1.winTotal += 1;
+                this.player2.winTotal += 1;
             }
             else if ((this.player2.chosenGesture === this.player2.gestures[0] || this.player2.chosenGesture === this.player2.gestures[2]) && this.player1.chosenGesture === this.player1.gestures[3]){
                 console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
-                this.player1.winTotal += 1;
+                this.player2.winTotal += 1;
             }
             else if ((this.player2.chosenGesture === this.player2.gestures[1] || this.player2.chosenGesture === this.player2.gestures[3]) && this.player1.chosenGesture === this.player1.gestures[4]){
                 console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
-                this.player1.winTotal += 1;
+                this.player2.winTotal += 1;
             }
     }    
 
