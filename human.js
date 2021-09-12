@@ -10,15 +10,21 @@ class Human extends Player {
        this.name = prompt ("What is your name? ");
     }
     chooseGesture (){
-        console.log ("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock");
-        let index = prompt();
-        if (index >=1 && index <= 5){
-        this.chosenGesture = this.gestures[index - 1];
+        this.promptFor("Make a selection:\n1. Rock\n2. Paper\n3. Scissors\n4. Lizard\n5. Spock", this.numberCorrect);
+    }
+    promptFor(question, valid){
+        do{
+            console.log (question);
+            var response = parseInt(prompt().trim());
+        } while(!response || !valid(response));
+        this.chosenGesture = this.gestures[response - 1];
+    }
+    numberCorrect(index){
+        if (index >=1 && index <= 5){    
+            return true;   
         }
-        else{
-            console.log ("Invalid entry");
-            this.chooseGesture;
-        }
+        console.log ("Invalid entry");
+        return false;
     }
 }
 module.exports = Human;

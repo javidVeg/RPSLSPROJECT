@@ -30,86 +30,46 @@ class Game {
         if (this.player1.chosenGesture === this.player2.chosenGesture){
             console.log ("It's a draw!");
         }
-            else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Scissors"){
-                console.log ("Rock Crushes Scissors");
+            else if ((this.player1.chosenGesture === this.player1.gestures[0] || this.player1.chosenGesture === this.player1.gestures[4]) && this.player2.chosenGesture === this.player2.gestures[2]){
+                console.log (`${this.player1.chosenGesture} beats ${this.player2.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Paper"){
-                console.log ("Paper Covers Rock");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Lizard"){
-                console.log ("Rock Crushes Lizard");
+            else if ((this.player1.chosenGesture === this.player1.gestures[1] || this.player1.chosenGesture === this.player1.gestures[4]) && this.player2.chosenGesture === this.player2.gestures[0]){
+                console.log (`${this.player1.chosenGesture} beats ${this.player2.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Rock" && this.player2.chosenGesture === "Spock"){
-                console.log ("Spock Vaporizes Rock");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player1.chosenGesture === "Scissors" && this.player2.chosenGesture === "Spock"){
-                console.log ("Spock Smashes Scissors");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player1.chosenGesture === "Scissors" && this.player2.chosenGesture === "Paper"){
-                console.log ("Scissors Cuts Paper");
+            else if ((this.player1.chosenGesture === this.player1.gestures[2] || this.player1.chosenGesture === this.player1.gestures[3]) && this.player2.chosenGesture === this.player2.gestures[1]){
+                console.log (`${this.player1.chosenGesture} beats ${this.player2.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Scissors" && this.player2.chosenGesture === "Lizard"){
-                console.log ("Scissors Decapitates Lizard");
+            else if ((this.player1.chosenGesture === this.player1.gestures[0] || this.player1.chosenGesture === this.player1.gestures[2]) && this.player2.chosenGesture === this.player2.gestures[3]){
+                console.log (`${this.player1.chosenGesture} beats ${this.player2.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Lizard" && this.player2.chosenGesture === "Spock"){
-                console.log ("Lizard Poisons Spock");
+            else if ((this.player1.chosenGesture === this.player1.gestures[1] || this.player1.chosenGesture === this.player1.gestures[3]) && this.player2.chosenGesture === this.player2.gestures[4]){
+                console.log (`${this.player1.chosenGesture} beats ${this.player2.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Lizard" && this.player2.chosenGesture === "Paper"){
-                console.log ("Lizard Eats Paper");
+            else if ((this.player2.chosenGesture === this.player2.gestures[0] || this.player2.chosenGesture === this.player2.gestures[4]) && this.player1.chosenGesture === this.player1.gestures[2]){
+                console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player1.chosenGesture === "Paper" && this.player2.chosenGesture === "Spock"){
-                console.log ("Paper Disproves Spock")
+            else if ((this.player2.chosenGesture === this.player2.gestures[1] || this.player2.chosenGesture === this.player2.gestures[4]) && this.player1.chosenGesture === this.player1.gestures[0]){
+                console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player2.chosenGesture === "Rock" && this.player1.chosenGesture === "Scissors"){
-                console.log ("Rock Crushes Scissors");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Rock" && this.player1.chosenGesture === "Paper"){
-                console.log ("Paper Covers Rock");
+            else if ((this.player2.chosenGesture === this.player2.gestures[2] || this.player2.chosenGesture === this.player2.gestures[3]) && this.player1.chosenGesture === this.player1.gestures[1]){
+                console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player2.chosenGesture === "Rock" && this.player1.chosenGesture === "Lizard"){
-                console.log ("Rock Crushes Lizard");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Rock" && this.player1.chosenGesture === "Spock"){
-                console.log ("Spock Vaporizes Rock");
+            else if ((this.player2.chosenGesture === this.player2.gestures[0] || this.player2.chosenGesture === this.player2.gestures[2]) && this.player1.chosenGesture === this.player1.gestures[3]){
+                console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player2.chosenGesture === "Scissors" && this.player1.chosenGesture === "Spock"){
-                console.log ("Spock Smashes Scissors");
+            else if ((this.player2.chosenGesture === this.player2.gestures[1] || this.player2.chosenGesture === this.player2.gestures[3]) && this.player1.chosenGesture === this.player1.gestures[4]){
+                console.log (`${this.player2.chosenGesture} beats ${this.player1.chosenGesture}`);
                 this.player1.winTotal += 1;
             }
-            else if (this.player2.chosenGesture === "Scissors" && this.player1.chosenGesture === "Paper"){
-                console.log ("Scissors Cuts Paper");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Scissors" && this.player1.chosenGesture === "Lizard"){
-                console.log ("Scissors Decapitates Lizard");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Lizard" && this.player1.chosenGesture === "Spock"){
-                console.log ("Lizard Poisons Spock");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Lizard" && this.player1.chosenGesture === "Paper"){
-                console.log ("Lizard Eats Paper");
-                this.player2.winTotal += 1;
-            }
-            else if (this.player2.chosenGesture === "Paper" && this.player1.chosenGesture === "Spock"){
-                console.log ("Paper Disproves Spock");
-                this.player2.winTotal += 1;
-            }       
     }    
 
         playGame () {
@@ -131,8 +91,6 @@ class Game {
             let repeat = prompt() 
             if (repeat === "1"){
                 let newGame = new Game();
-                this.player1.winTotal = 0;
-                this.player2.winTotal = 0;
                 newGame.runGame();
             }    
             else{
