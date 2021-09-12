@@ -9,7 +9,7 @@ class Game {
         this.player2 = null;
     }
     welcome (){
-        console.log ("Welcome to RPSLS!\nRules:\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n");
+        console.log ("Welcome to RPSLS!\nRules:\nRock Crushes Scissors\nScissors Cuts Paper\nPaper Covers Rock\nRock Crushes Lizard\nLizard Poisons Spock\nSpock Smashes Scissors\nScissors Decapitates Lizard\nLizard Eats Paper\nPaper Disproves Spock\nSpock Vaporizes Rock\n");
     }
     gameType (){
     console.log ("Select your game: 1. Human vs. Computer or 2. Human vs. Human ")
@@ -116,6 +116,8 @@ class Game {
         while (this.player1.winTotal < 2 && this.player2.winTotal < 2){
             this.player1.chooseGesture();
             this.player2.chooseGesture();
+            console.log(this.player1.name + " chose " + this.player1.chosenGesture);
+            console.log(this.player2.name + " chose " + this.player2.chosenGesture);
             this.getResult();
             }
         }    
@@ -128,8 +130,10 @@ class Game {
             console.log ("Would you like to play again? 1. yes or 2. no");
             let repeat = prompt() 
             if (repeat === "1"){
-                new Game;
-                this.runGame();
+                let newGame = new Game();
+                this.player1.winTotal = 0;
+                this.player2.winTotal = 0;
+                newGame.runGame();
             }    
             else{
                 console.log ("Goodbye");
